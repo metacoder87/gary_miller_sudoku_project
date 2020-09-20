@@ -90,14 +90,14 @@ class Board
     def blocks
 
 
-    def check(hash)
+    def check?(hash)
         hash.values.all? { |arr| arr.sort == (1..9).to_a }
     end
 
     def solved?
         check(rows)
-        check(cols)
-
+        check(columns)
+        check(blocked)
     end
 
 end
