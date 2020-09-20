@@ -85,10 +85,34 @@ class Board
     def cols
         col_vals = {}
         @tiles.keys.each { |spot| col_vals.include?(spot[1]) ? col_vals[spot[1]] << @tiles.values_at(spot)[0].value.uncolorize.to_i : col_vals[spot[1]] = [@tiles.values_at(spot)[0].value.uncolorize.to_i] }
+        col_vals
     end
 
     def blocks
-
+        block_vals = {}
+        @tiles.keys.each do |spot| 
+            if spot[0] < 5 && spot[1] < 5 
+                block_vals.keys.include?(1) ? block_vals[1] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[1] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            elsif spot[0] < 5 && spot[1] > 5 && spot[1] < 9
+                block_vals.keys.include?(2) ? block_vals[2] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[2] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            elsif spot[0] < 5 && spot[1] > 9
+                block_vals.keys.include?(3) ? block_vals[3] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[3] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            elsif spot[0] > 5 && spot[0] < 9 && spot[1] < 5
+                block_vals.keys.include?(4) ? block_vals[4] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[4] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            elsif spot[0] > 5 && spot[0] < 9 && spot[1] > 5 && spot[1] < 9
+                block_vals.keys.include?(5) ? block_vals[5] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[5] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            elsif spot[0] > 5 && spot[0] < 9 && spot[1] > 9
+                block_vals.keys.include?(6) ? block_vals[6] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[6] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            elsif spot[0] > 9 && spot[1] < 5
+                block_vals.keys.include?(7) ? block_vals[7] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[7] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            elsif spot[0] > 9 && spot[1] > 5 && spot[1] < 9
+                block_vals.keys.include?(8) ? block_vals[8] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[8] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            elsif spot[0] > 5 && spot[1] < 9
+            else  block_vals.keys.include?(9) ? block_vals[9] << @tiles.values_at(spot)[0].value.uncolorize.to_i : block_vals[9] = [@tiles.values_at(spot)[0].value.uncolorize.to_i]
+            end
+        end
+        block_vals
+    end
 
     def check?(hash)
         hash.values.all? { |arr| arr.sort == (1..9).to_a }
