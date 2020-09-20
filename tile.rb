@@ -8,7 +8,6 @@ class Tile
     def initialize(value, given)
         @value = value
         @given = given
-        colors
     end
 
     def change(val)
