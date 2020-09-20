@@ -9,7 +9,7 @@ require_relative "tile"
 class Board
 
 
-    def self.from_file
+    def from_file
         IO.readlines(@puzzle).each { |line| @grid << line.chomp.split("") }
     end
 
@@ -18,7 +18,7 @@ class Board
     def initialize(puzzle)
         @puzzle = "puzzles/" + puzzle
         @grid = []
-        self.from_file
+        from_file
         build
         @tiles = {}
         fill_tiles
