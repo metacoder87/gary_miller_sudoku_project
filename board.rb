@@ -3,6 +3,7 @@
 
 
 
+require 'byebug'
 require "colorize"
 require_relative "tile"
 
@@ -81,16 +82,18 @@ class Board
         row_vals
     end
 
-    def cols
-        col_vals = {}
-        board.tiles.keys.each { |spot| col_vals.include?(spot[1]) ? col_vals[spot[1]] << board.tiles.values_at(spot)[0].value.uncolorize.to_i : col_vals[spot[1]] = [board.tiles.values_at(spot)[0].value.uncolorize.to_i] }
-    end
+    k
+
+    def blocks
+
 
     def check(hash)
         hash.values.all? { |arr| arr.sort == (1..9).to_a }
     end
 
     def solved?
+        check(rows)
+        check(cols)
 
     end
 
