@@ -75,6 +75,12 @@ class Board
        @grid.each { |line| puts line.join(" ") }
     end
 
+    def rows
+        row_vals = {}
+        @tiles.keys.each { |spot| row_vals.include?(spot[0]) ? row_vals[spot[0]] << @tiles.values_at(spot)[0].value.uncolorize.to_i : row_vals[spot[0]] = [@tiles.values_at(spot)[0].value.uncolorize.to_i] }
+        row_vals
+    end
+
     def solved?
 
     end
