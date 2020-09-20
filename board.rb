@@ -81,6 +81,10 @@ class Board
         row_vals
     end
 
+    def check_rows
+        rows.values.all? { |arr| arr.sort == (1..9).to_a }
+    end
+
     def solved?
 
     end
