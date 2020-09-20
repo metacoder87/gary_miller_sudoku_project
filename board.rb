@@ -81,8 +81,11 @@ class Board
         row_vals
     end
 
-    def check_rows
-        rows.values.all? { |arr| arr.sort == (1..9).to_a }
+    def cols
+        col_vals = {}
+        board.tiles.keys.each { |spot| col_vals.include?(spot[1]) ? col_vals[spot[1]] << board.tiles.values_at(spot)[0].value.uncolorize.to_i : col_vals[spot[1]] = [board.tiles.values_at(spot)[0].value.uncolorize.to_i] }
+    end
+
     end
 
     def solved?
