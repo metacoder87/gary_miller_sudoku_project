@@ -82,7 +82,10 @@ class Board
         row_vals
     end
 
-    k
+    def cols
+        col_vals = {}
+        @tiles.keys.each { |spot| col_vals.include?(spot[1]) ? col_vals[spot[1]] << @tiles.values_at(spot)[0].value.uncolorize.to_i : col_vals[spot[1]] = [@tiles.values_at(spot)[0].value.uncolorize.to_i] }
+    end
 
     def blocks
 
