@@ -10,3 +10,9 @@ class Player
     def initialize
         @player = get_name
     end
+
+    def get_name
+        puts "What is the players name?"
+        gets.chomp.to_s.capitalize
+    end
+
