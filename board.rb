@@ -1,6 +1,6 @@
-
-
-
+            # meta_coder (Gary Miller) =)
+            # gmiller052611@gmail.com
+            # https://github.com/metacoder87/gary_miller_sudoku_project
 
 
 require 'byebug'
@@ -67,7 +67,6 @@ class Board
         @grid.each_with_index { |line, idx| line.each_with_index { |ele, i| @grid[idx][i] = @tiles[[idx,i]].value if @tiles.keys.include?([idx,i]) } }
     end
                     
-
     def edit_val(position, new_val)
         @grid[position[0]][position[1]] = @tiles[position].change(new_val.to_s.green) 
     end
@@ -119,15 +118,17 @@ class Board
     end
 
     def solved?
-        check(rows)
-        check(columns)
-        check(blocked)
+        check?(rows) && check?(cols) && check?(blocks) || false
     end
 
 end
 
 
-board = Board.new("sudoku1.txt")
-board.render
-board.edit_val([2,2],5)
-board.render
+# board = Board.new("sudoku1.txt")
+# board.render
+# board.edit_val([2,2],5)
+# board.render
+
+            # meta_coder (Gary Miller) =)
+            # gmiller052611@gmail.com
+            # https://github.com/metacoder87/gary_miller_sudoku_project
