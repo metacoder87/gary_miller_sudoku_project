@@ -1,4 +1,6 @@
-
+            # meta_coder (Gary Miller) =)
+            # gmiller052611@gmail.com
+            # https://github.com/metacoder87/gary_miller_sudoku_project
 
 
 class Tile
@@ -19,3 +21,8 @@ class Tile
     end
     
 end
+
+
+            # meta_coder (Gary Miller) =)
+            # gmiller052611@gmail.com
+            # https://github.com/metacoder87/gary_miller_sudoku_project
