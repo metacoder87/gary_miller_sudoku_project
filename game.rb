@@ -16,23 +16,20 @@ class Game
     end
 
     def play
-
+        until @board.solved? == true
+            system 'clear'
+            @board.render
+            @board.edit_val(@player.get_position, @player.get_value.to_i)
+            @board.render
+        end
+        puts "Congrats #{@player.player}, you solved that sudoku."
     end
 
-    def solved?
+end
 
-    end
+game = Game.new("sudoku1_almost.txt")
+game.play
 
-    def render
-
-    end
-
-    def prompt
-
-    end
-
-    def edit_pos(val)
-
-    end
-
-    def
+            # meta_coder (Gary Miller) =)
+            # gmiller052611@gmail.com
+            # https://github.com/metacoder87/gary_miller_sudoku_project
