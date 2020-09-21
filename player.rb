@@ -29,3 +29,13 @@ class Player
         end
     end
 
+    def get_value
+        puts "#{@player}, enter a number 1 - 9"
+        gets.chomp
+    end
+
+end
+
+            # meta_coder (Gary Miller) =)
+            # gmiller052611@gmail.com
+            # https://github.com/metacoder87/gary_miller_sudoku_project
