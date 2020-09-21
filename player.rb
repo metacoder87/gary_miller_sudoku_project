@@ -16,3 +16,16 @@ class Player
         gets.chomp.to_s.capitalize
     end
 
+    def get_position
+        puts "#{@player}, input coordinates of a value you would like to change..."
+        pos = gets.chomp.split(" ").map(&:to_i)
+        pos.map! do |num| 
+            if (1..3).to_a.include?(num)
+                num += 1
+            elsif (4..6).to_a.include?(num)
+                num += 2
+            else num += 3
+            end
+        end
+    end
+
