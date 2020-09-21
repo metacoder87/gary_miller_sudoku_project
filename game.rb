@@ -1,12 +1,18 @@
+            # meta_coder (Gary Miller) =)
+            # gmiller052611@gmail.com
+            # https://github.com/metacoder87/gary_miller_sudoku_project
 
 
-
-
+require_relative 'player'
+require_relative 'board'
 
 class Game
 
-    def initialize
-        @board = 
+    attr_reader :board, :player
+
+    def initialize(puzzle)
+        @board = Board.new(puzzle)
+        @player = Player.new
     end
 
     def play
